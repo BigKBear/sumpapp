@@ -20,20 +20,22 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 		$this -> customMath = new CustomMath();
 	}
 
+	/*
 	//first value checks
-	public function testShouldThrowExceptionWhenTheresAStringPassedAsFirstVariable() {
-		$this -> setExpectedException('InvalidArgumentException', 'Expected first value to be number');
-
-		//Act
-		$answer = $this -> customMath -> add("asdf", "Asdf");
-	}
-
-	public function testShouldThrowExceptionWhenTheresANullPassedAsFirstVariable() {
-		$this -> setExpectedException('InvalidArgumentException', 'Expected first value to be number');
-
-		//Act
-		$answer = $this -> customMath -> add(null, "Asdf");
-	}
+		public function testShouldThrowExceptionWhenTheresAStringPassedAsFirstVariable() {
+			$this -> setExpectedException('InvalidArgumentException', 'Expected first value to be number');
+	
+			//Act
+			$answer = $this -> customMath -> add("asdf", "Asdf");
+		}
+	
+		public function testShouldThrowExceptionWhenTheresANullPassedAsFirstVariable() {
+			$this -> setExpectedException('InvalidArgumentException', 'Expected first value to be number');
+	
+			//Act
+			$answer = $this -> customMath -> add(null, "Asdf");
+		}*/
+	
 
 	//second value checks
 	public function testShouldThrowExceptionWhenTheresAStringPassedAsSecondVariable() {
