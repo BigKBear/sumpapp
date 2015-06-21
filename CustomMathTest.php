@@ -2,7 +2,9 @@
 
 class CustomMath {
 	public function add($x, $y) {
-		if ((is_string($x))&&($x === 0)) {
+		if ((is_string($x))&&(($x!=0))) {
+			throw new InvalidArgumentException('Expected first value to be number');
+		} else if ((is_string($x))&&((is_string($y))))&&(($x!=0)&&($y!=0)) {
 			throw new InvalidArgumentException('Expected first value to be number');
 		} else if ($x == NULL) {
 			throw new InvalidArgumentException('Expected First value to be number');
@@ -10,7 +12,6 @@ class CustomMath {
 			$answer = $x + $y;
 		}
 	}
-
 }
 
 class CustomMathTest extends PHPUnit_Framework_TestCase {
