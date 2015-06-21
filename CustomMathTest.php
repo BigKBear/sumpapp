@@ -4,15 +4,15 @@ class CustomMath {
 	public function add($x, $y) {
 		if(($x==0)&&($y==0)){
 			$answer == 0;
-			} else if ($y == NULL) {
-				throw new InvalidArgumentException('Expected Second value to be number');
-				} else if ($x == NULL) {
-					throw new InvalidArgumentException('Expected first value to be number');
-					} else if ((is_string($x))||(($x!=0))) {
-						throw new InvalidArgumentException('Expected first value to be number');
-						} else {
-							$answer = $x + $y;
-							}
+		} else if ($y == NULL) {
+                        throw new InvalidArgumentException('Expected Second value to be number');
+                } else if ($x == NULL) {
+                        throw new InvalidArgumentException('Expected first value to be number');
+                } else if ((is_string($x))||(($x!=0))) {
+			throw new InvalidArgumentException('Expected first value to be number');
+		} else  {
+			$answer = $x + $y;
+		}
 	}
 }
 
