@@ -2,14 +2,12 @@
 
 class CustomMath {
 	public function add($x, $y) {
-		$answer = $x + $y;
-
 		if (is_string($x)) {
 			throw new InvalidArgumentException('Expected first value to be number');
 		} else if ($x == NULL) {
 			throw new InvalidArgumentException('Expected first value to be number');
 		} else {
-			throw new InvalidArgumentException('Expected first value to be number');
+			$answer = $x - $y;
 		}
 	}
 }
