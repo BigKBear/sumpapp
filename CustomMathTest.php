@@ -2,10 +2,10 @@
 
 class CustomMath {
 	public function add($x, $y) {
-		if ($x == NULL) {
-                        throw new InvalidArgumentException('Expected first value to be number');
-                } else if ($y == NULL) {
+		if ($y == NULL) {
                         throw new InvalidArgumentException('Expected Second value to be number');
+                } else if ($x == NULL) {
+                        throw new InvalidArgumentException('Expected first value to be number');
                 } else if ((is_string($x))||(($x!=0))) {
 			throw new InvalidArgumentException('Expected first value to be number');
 		} else if (((is_string($y))||($y!=0))) {
