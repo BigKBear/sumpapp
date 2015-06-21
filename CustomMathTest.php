@@ -37,7 +37,7 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 			$answer = $this -> customMath -> add(null, "Asdf");
 		}
 
-
+/*
 	//second value checks
 	public function testShouldThrowExceptionWhenTheresAStringPassedAsSecondVariable() {
 		$this -> setExpectedException('InvalidArgumentException', 'Expected Second value to be number');
@@ -45,14 +45,14 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 		//Act
 		$answer = $this -> customMath -> add(0, "Asdf");
 	}
-/*
+*/
 	public function testShouldThrowExceptionWhenTheresANullPassedAsSecondVariable() {
 		$this -> setExpectedException('InvalidArgumentException', 'Expected Second value to be number');
 
 		//Act
 		$answer = $this -> customMath -> add(0, null);
 	}
-*/
+
 	public function testShouldReturnZeroWhenTheresZeroPassedAsFirstVariableAndZeroPassedAsSecondVariable() {
 		//Act
 		$answer = $this -> customMath -> add(0, 0);
