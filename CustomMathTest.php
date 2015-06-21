@@ -2,6 +2,7 @@
 
 class CustomMath {
 	public function add($x, $y) {
+		$answer =0;
 		if(($x==0)&&($y==0)){
 			$answer == 0;
 		} else if ($y == NULL) {
