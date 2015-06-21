@@ -1,6 +1,22 @@
 <?php
 
 class CustomMath {
+	
+	private function isValidMathParam($x) {
+		return $x != null && !is_string($x);
+	}
+	
+	public function add($x, $y) {
+		if (!isValidMathParam($x)) {
+                        throw new InvalidArgumentException('Expected first value to be number');
+                }
+                
+		if (!isValidMathParam($y)) {
+                        throw new InvalidArgumentException('Expected Second value to be number');
+                } 
+		return  $x + $y;
+	}
+	/*
 	public function add($x, $y) {
 		$answer = 0;
 		 if ($y == NULL) {
@@ -13,6 +29,7 @@ class CustomMath {
 			$answer = $x + $y;
 		}
 	}
+	*/
 }
 
 class CustomMathTest extends PHPUnit_Framework_TestCase {
