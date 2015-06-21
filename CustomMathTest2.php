@@ -2,6 +2,8 @@
 
 class CustomMath {
 	public function add($x, $y) {
+		$answer = $x + $y;
+
 		if (is_string($x)) {
 			throw new InvalidArgumentException('Expected first value to be number');
 		} else if ($x == NULL) {
@@ -10,7 +12,6 @@ class CustomMath {
 			throw new InvalidArgumentException('Expected first value to be number');
 		}
 	}
-
 }
 
 class CustomMathTest extends PHPUnit_Framework_TestCase {
@@ -34,7 +35,8 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 		//Act
 		$answer = $this -> customMath -> add(null, "Asdf");
 	}
-	/*
+
+/*
 	public function testShouldReturnZeroWhenTheresZeroPassedAsFirstVariableAndZeroPassedAsSecondVariable() {
 		//Act
 		$answer = $this -> customMath -> add(0, 0);
