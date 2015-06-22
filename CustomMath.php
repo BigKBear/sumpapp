@@ -1,47 +1,42 @@
 <?php
 /*
  * Kyle St Hill
- * CustomMath.php for Calculator.php 
+ * CustomMath.php for Calculator.php
  * Using POST method
- */ 
+ */
 
-/*
-class CustomMath
-{
-		public static function add($x, $y) {
+class CustomMath {
+	public function add($x, $y) {
+		if (($x === 0) && ($y === 0)) {
+			return "0";
+		} else if (($x === 0) && (($y > 0) || ($y < 0))) {
+			return $x + $y;
+		} 
+		else if ($y == NULL) {
+				throw new InvalidArgumentException('Expected Second value to be number') ;
+				} else if (($x === 0) && (is_string($y))) {
+					 throw new InvalidArgumentException('Expected Second value to be number') ;
+				} else if ($x == NULL) {
+					throw new InvalidArgumentException('Expected first value to be number') ;
+				} else if (is_string($x)) {
+					throw new InvalidArgumentException('Expected first value to be number') ;
+				} 
+		else {
 			return $x + $y;
 		}
-		
-		function subtract($x, $y) {
-			return $x - $y;
-		}
-		
-		function multiply($x, $y) {
-			return $x * $y;
-		}
-		
-		function divide($x, $y) {
-			return $x / $y;
-		}
+	}
+
+	function subtract($x, $y) {
+		return $x - $y;
+	}
+
+	function multiply($x, $y) {
+		return $x * $y;
+	}
+
+	function divide($x, $y) {
+		return $x / $y;
+	}
+
 }
-public function testShouldThrowExceptionWhenTheresNoParamPassed() {
-		$this -> setExpectedException('\InvalidArgumentException');
-
-		//Arrange
-		$this -> customMath = new CustomMath();
-
-		//Act
-		$answer = $this -> customMath -> add();
-	}
-
-	public function xtest_add_one_varibles_should_return_exception_one_numbers_entered() {
-		$this -> setExpectedException('InvalidArgumentException', 'only one variables');
-
-		//Arrange
-		$this -> customMath = new CustomMath();
-
-		//Act
-		$answer = $this -> customMath -> add(1);
-	}
- * */
 ?>
