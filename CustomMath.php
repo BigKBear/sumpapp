@@ -11,17 +11,15 @@ class CustomMath {
 			return "0";
 		} else if (($x === 0) && (($y > 0) || ($y < 0))) {
 			return $x + $y;
-		} /*
-		else if ($y == NULL) {
-					throw new InvalidArgumentException('Expected Second value to be number');
-				} else if (($x === 0) && (is_string($y))) {
-					throw new InvalidArgumentException('Expected Second value to be number');
-				} else if ($x == NULL) {
-					throw new InvalidArgumentException('Expected first value to be number');
-				} else if (is_string($x)) {
-					throw new InvalidArgumentException('Expected first value to be number');
-				}*/
-		 else {
+		} else if ($y == NULL) {
+			throw new InvalidArgumentException('Expected Second value to be number');
+		} else if (($x === 0) && (is_string($y))) {
+			throw new InvalidArgumentException('Expected Second value to be number');
+		} else if ($x == NULL) {
+			throw new InvalidArgumentException('Expected first value to be number');
+		} else if (is_string($x)) {
+			throw new InvalidArgumentException('Expected first value to be number');
+		} else {
 			return $x + $y;
 		}
 	}
