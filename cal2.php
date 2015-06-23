@@ -5,7 +5,7 @@ $number2 = $_POST['number2'];
 $operation = $_POST["op"];
 
 if ($operation == "add") {
-	$giveit = CustomMath::add($number1, $number2);
+	$giveit = CustomMath::add($_POST['number1'], $_POST['number2']);
 } elseif ($operation == "subtract") {
 	$giveit = CustomMath::subtract($number1, $number2);
 } elseif ($operation == "multiply") {
@@ -24,14 +24,14 @@ if ($operation == "add") {
 	<body>
 		<form action="cal2.php" method = "POST">
 
-			<input type="text" name="number1" value="">
+			<input type="number" name="number1" value="">
 			<select name ="op">
 				<option name="add">add </option>
 				<option name="subtract">subtract </option>
 				<option name="multiply">multiply </option>
 				<option name="divide">divide </option>
 			</select>
-			<input type="text" name="number2" value="">
+			<input type="number" name="number2" value="">
 			<br/>
 			<input type="submit" value="Calculate">
 			</br>
