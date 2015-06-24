@@ -10,25 +10,6 @@ $number2 = $_POST['number2'];
 
 echo $number1, $answer, $number2;
 
-//above evaluates text and returns the result
-//eval("echo (2+2);");
-
-//injection is bad because the user can type in anything and break the code
-//eval("\$result = $number1 $answer $number2;");
-
-//echo "\$result = $number1 $answer $number2;";
-
-/*
-if( $answer =='+')
-$result = $number1 + $number2;
-if( $answer =='-')
-$result = $number1 - $number2;
-if( $answer =='*')
-$result = $number1 * $number2;
-if( $answer =='/')
-$result = $number1 / $number2;
-*/
-
 switch( $answer )
 {
 case '+' : $result = $number1 + $number2;
@@ -59,15 +40,3 @@ echo <<<END_OF_FORM
 </form>
 END_OF_FORM;
 ?>
-<!--
-<br>
-	When ADDED you get: <?php  echo $_POST["name"] + $_POST["email"];	?>
-<br>
-	When SUBTRACTED you get: The sum is: <?php  echo $_POST["name"] - $_POST["email"];	?>
-<br>
-	When MULTIPLED you get: <?php  echo $_POST["name"] * $_POST["email"];	?>
-<br>
-	When DIVIDED you get: <?php  echo $_POST["name"] / $_POST["email"];	?>
-<br>
-
--->

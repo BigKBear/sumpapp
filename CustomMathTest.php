@@ -29,19 +29,19 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 		$this -> setExpectedException('InvalidArgumentException', 'Expected Second value to be number');
 
 		//Act
-		$answer = $this -> customMath -> add(0, "Asdf");
+		$answer = $this -> customMath -> add("0", "Asdf");
 	}
 
 	public function testShouldThrowExceptionWhenTheresANullPassedAsSecondVariable() {
 		$this -> setExpectedException('InvalidArgumentException', 'Expected Second value to be number');
 
 		//Act
-		$answer = $this -> customMath -> add(0, null);
+		$answer = $this -> customMath -> add("0", null);
 	}
 
 	public function testShouldReturnZeroWhenTheresZeroPassedAsFirstVariableAndZeroPassedAsSecondVariable() {
 		//Act
-		$answer = $this -> customMath -> add(0, 0);
+		$answer = $this -> customMath -> add("0", "0");
 
 		//Assert
 		$this -> assertTrue($answer == 0);
@@ -49,7 +49,7 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 
 	public function testShouldReturnOneWhenTheresZeroPassedAsFirstVariableAndOnePassedAsSecondVariable() {
 		//Act
-		$answer = $this -> customMath -> add(0, 1);
+		$answer = $this -> customMath -> add("0", "1");
 
 		//Assert
 		$this -> assertTrue($answer == 1);
@@ -57,7 +57,7 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 
 	public function testShouldReturnNegThreeWhenTheresZeroPassedAsFirstVariableAndNegThreePassedAsSecondVariable() {
 		//Act
-		$answer = $this -> customMath -> add(0, -3);
+		$answer = $this -> customMath -> add("0", "-3");
 
 		//Assert
 		$this -> assertTrue($answer == -3);
@@ -65,11 +65,10 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 
 	public function testShouldReturnNegFiveWhenTheresNegTwoPassedAsFirstVariableAndNegThreePassedAsSecondVariable() {
 		//Act
-		$answer = $this -> customMath -> add(-2, -3);
+		$answer = $this -> customMath -> add("-2", "-3");
 
 		//Assert
 		$this -> assertTrue($answer == -5);
 	}
-
 }
 ?>

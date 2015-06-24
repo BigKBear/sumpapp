@@ -20,6 +20,8 @@ class CustomMath {
 			throw new InvalidArgumentException('Expected first value to be number');
 		} else if (is_string($x)) {
 			throw new InvalidArgumentException('Expected first value to be number');
+		} else if (is_string($y)) {
+			throw new InvalidArgumentException('Expected Second value to be number');
 		} else {
 			return $x + $y;
 		}
