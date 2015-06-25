@@ -7,19 +7,19 @@ $operation = $_POST["op"];
 
 if($operation == "add")
 {
-	$giveit = CustomMath::add($number1,$number2);
+	$giveit = CustomMath::add($_POST["number1"],$_POST["number2"]);
 } 
 elseif ($operation == "subtract")
 {
-	$giveit = CustomMath::subtract($number1,$number2);
+	$giveit = CustomMath::subtract($_POST["number1"],$_POST["number2"]);
 }
 elseif ($operation == "multiply")
 {
-	$giveit = CustomMath::multiply($number1,$number2);
+	$giveit = CustomMath::multiply($_POST["number1"],$_POST["number2"]);
 }
 else
 {
-	$giveit = CustomMath::divide($number1,$number2);
+	$giveit = CustomMath::divide($_POST["number1"],$_POST["number2"]);
 }
 ?>
 <!DOCTYPE html>
