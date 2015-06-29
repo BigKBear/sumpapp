@@ -10,20 +10,19 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 	}
 
 	//first value checks
-		public function testShouldThrowExceptionWhenTheresAStringPassedAsFirstVariable() {
+	public function testShouldThrowExceptionWhenTheresAStringPassedAsFirstVariable() {
 			$this -> setExpectedException('InvalidArgumentException', 'Expected first value to be number');
 
 			//Act
 			$answer = $this -> customMath -> add("asdf", "Asdf");
 		}
 
-		public function testShouldThrowExceptionWhenTheresANullPassedAsFirstVariable() {
+	public function testShouldThrowExceptionWhenTheresANullPassedAsFirstVariable() {
 			$this -> setExpectedException('InvalidArgumentException', 'Expected first value to be number');
 
 			//Act
 			$answer = $this -> customMath -> add(null, "Asdf");
 		}
-
 
 	//second value checks
 	public function testShouldThrowExceptionWhenTheresAStringPassedAsSecondVariable() {
@@ -70,6 +69,16 @@ class CustomMathTest extends PHPUnit_Framework_TestCase {
 
 		//Assert
 		$this -> assertTrue($answer == -5);
+	}
+
+	public function testSubtractWhenNegNumPassedAsFirstVariableAndNegNumPassedAsSecondVariableSmallerThanFirstVariableShouldReturnAPositiveNumber()
+	{
+		//Act
+		$answer = $this -> customMath -> subtract("-2", "-10");
+		
+		//Assert
+		$this -> assertTrue($answer == 8);
+		
 	}
 }
 ?>
