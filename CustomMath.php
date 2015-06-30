@@ -6,15 +6,21 @@
  */
 include 'mathUtilityClass.php';
 
-class CustomMath  {
+class CustomMath {
 
-	
-	public static function add($x, $y) {
+	public static function isInvalidParams($x, $y) {
 		if (!MathUtility::isnumeric($x)) {
-			throw new InvalidArgumentException('Expected first value to be number');
+			return new InvalidArgumentException('Expected first value to be number');
 		}
 		if (!MathUtility::isnumeric($y)) {
-			throw new InvalidArgumentException('Expected Second value to be number');
+			return new InvalidArgumentException('Expected Second value to be number');
+		}
+		return null;
+	}
+
+	public static function add($x, $y) {
+		if ($execption = CustomMath::isInvalidParams($x, $y)) {
+			throw $execption;
 		}
 		return $x + $y;
 	}
@@ -75,34 +81,24 @@ class CustomMath  {
 	 }*/
 
 	function subtract($x, $y) {
-		if (!is_numeric($x)) {
-			throw new InvalidArgumentException('Expected first value to be number');
-		}
-		if (!is_numeric($y)) {
-			throw new InvalidArgumentException('Expected Second value to be number');
+		if ($execption = CustomMath::isInvalidParams($x, $y)) {
+			throw $execption;
 		}
 		return $x - $y;
 	}
 
 	function multiply($x, $y) {
-		if (!is_numeric($x)) {
-			throw new InvalidArgumentException('Expected first value to be number');
-		}
-		if (!is_numeric($y)) {
-			throw new InvalidArgumentException('Expected Second value to be number');
+		if ($execption = CustomMath::isInvalidParams($x, $y)) {
+			throw $execption;
 		}
 		return $x * $y;
 	}
 
 	function divide($x, $y) {
-		if (!is_numeric($x)) {
-			throw new InvalidArgumentException('Expected first value to be number');
-		}
-		if (!is_numeric($y)) {
-			throw new InvalidArgumentException('Expected Second value to be number');
+		if ($execption = CustomMath::isInvalidParams($x, $y)) {
+			throw $execption;
 		}
 		return $x / $y;
 	}
-
 }
 ?>

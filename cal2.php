@@ -1,38 +1,43 @@
 <?php
 include_once 'CustomMath.php';
-include 'mathUtilityClass.php';
 
-$number1 = $_POST['number1'];
-$number2 = $_POST['number2'];
-$operation = $_POST["op"];
+if (isset($_POST["number1"]) || isset($_POST["number2"])) {
 
-if ($operation == "add") {
-	try {
-		$giveit = CustomMath::add($_POST["number1"], $_POST["number2"]);
-	} catch (exception $addError) {
-		echo 'Error: ', $addError -> getMessage();
+	$number1 = $_POST['number1'];
+	$number2 = $_POST['number2'];
+	$operation = $_POST["op"];
+
+	if ($operation == "add") {
+		try {
+			$giveit = CustomMath::add($_POST["number1"], $_POST["number2"]);
+		} catch (exception $addError) {
+			echo 'Error: ', $addError -> getMessage();
+		}
 	}
-} elseif ($operation == "subtract") {
-	try {
-		$giveit = CustomMath::subtract($_POST["number1"], $_POST["number2"]);
-	} catch (exception $subError) {
-		echo 'Error: ', $subError -> getMessage();
-	}
+	if ($operation == "subtract") {
+		try {
+			$giveit = CustomMath::subtract($_POST["number1"], $_POST["number2"]);
+		} catch (exception $subError) {
+			echo 'Error: ', $subError -> getMessage();
+		}
 
-} elseif ($operation == "multiply") {
-	try {
-		$giveit = CustomMath::multiply($_POST["number1"], $_POST["number2"]);
-	} catch (exception $mulError) {
-		echo 'Error: ', $mulError -> getMessage();
 	}
+	if ($operation == "multiply") {
+		try {
+			$giveit = CustomMath::multiply($_POST["number1"], $_POST["number2"]);
+		} catch (exception $mulError) {
+			echo 'Error: ', $mulError -> getMessage();
+		}
 
-} else {
-	try {
-		$giveit = CustomMath::divide($_POST["number1"], $_POST["number2"]);
-	} catch (exception $divError) {
-		echo 'Error: ', $divError -> getMessage();
 	}
+	if ($operation == "divide") {
+		try {
+			$giveit = CustomMath::divide($_POST["number1"], $_POST["number2"]);
+		} catch (exception $divError) {
+			echo 'Error: ', $divError -> getMessage();
+		}
 
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -55,10 +60,13 @@ if ($operation == "add") {
 			<br/>
 			<input type="submit" value="Calculate">
 			</br>
-			<input type="text" value="Answer : <?php echo $giveit ?>">
+			<input type="text" value="Answer : <?php
+			if (isset($giveit)) {
+				echo $giveit;
+			}
+			?>">
 
 		</form>
 	</body>
 
 </html>
-
